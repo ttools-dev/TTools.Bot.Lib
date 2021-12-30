@@ -19,6 +19,7 @@ public static class TypedMessageParser
 
     public static PrivateMessage ParsePrivateMessage(RawIrcMessage message)
     {
+        // Username can be extracted from the host prefix (username!username@username.tmi.twitch.tv)
         var username = message.Prefix[..message.Prefix.Span.IndexOf('!')];
 
         // TODO: handle # being pushed out a char (don't know what this means)
@@ -45,6 +46,7 @@ public static class TypedMessageParser
         var parsedTags = new Dictionary<ReadOnlyMemory<char>, ReadOnlyMemory<char>>();
         var remainingTags = tags;
 
+        // Go through the memory using the index of the next semicolon
         do
         {
             var endOfTagIndex = remainingTags.Span.IndexOf(';');
@@ -58,7 +60,10 @@ public static class TypedMessageParser
 
             parsedTags.Add(tagKey, tagValue);
 
+            // Final index will be larger than the Span's length, this clamps it
             var realEndIndex = Math.Min(remainingTags.Length, endOfTagIndex + 1);
+
+            // Remove the parsed tag from the working string
             remainingTags = remainingTags[realEndIndex..];
         } while (remainingTags.Length > 0);
 
