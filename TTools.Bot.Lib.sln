@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTools.Bot.Lib.Parser", "src\TTools.Bot.Lib.Parser\TTools.Bot.Lib.Parser.csproj", "{4A98050F-BDFB-4A1B-A78C-AF87F3244FFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTools.Bot.Lib.Parser.Test", "src\TTools.Bot.Lib.Parser.Test\TTools.Bot.Lib.Parser.Test.csproj", "{9F5F63A0-4418-45E1-BC8A-1D96483BE280}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{4A98050F-BDFB-4A1B-A78C-AF87F3244FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A98050F-BDFB-4A1B-A78C-AF87F3244FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A98050F-BDFB-4A1B-A78C-AF87F3244FFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F5F63A0-4418-45E1-BC8A-1D96483BE280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F5F63A0-4418-45E1-BC8A-1D96483BE280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F5F63A0-4418-45E1-BC8A-1D96483BE280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F5F63A0-4418-45E1-BC8A-1D96483BE280}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
