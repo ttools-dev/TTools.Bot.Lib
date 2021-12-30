@@ -22,7 +22,7 @@ public static class IrcMessageParser
         var username = message.Prefix[..message.Prefix.Span.IndexOf('!')];
         var spannedParameters = message.Parameters.Span;
 
-        // TODO: handle # being pushed out a char
+        // TODO: handle # being pushed out a char (don't know what this means)
         // TODO: maybe FF, caused by recent messages api
         var separatorIndex = spannedParameters.IndexOf(':');
         if (separatorIndex == -1)
