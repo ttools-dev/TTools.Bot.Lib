@@ -28,8 +28,7 @@ public static class IrcMessageParser
         if (separatorIndex == -1)
             separatorIndex = spannedParameters.LastIndexOf(" ");
         var channel = message.Parameters[1..(separatorIndex - 1)];
-        // TODO: add test
-        var content = message.Parameters[(separatorIndex + 1)..].Trim('');
+        var content = message.Parameters[(separatorIndex + 1)..];
 
         var parsedTags = ParseTagsToDictionary(message.Tags);
         return new PrivateMessage(message, username, channel, content, parsedTags);
