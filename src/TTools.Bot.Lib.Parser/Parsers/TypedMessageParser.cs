@@ -50,7 +50,6 @@ public static class IrcMessageParser
         {
             var endOfTagIndex = remainingTags.Span.IndexOf(';');
 
-            // BUGBUG: empty string at end could cause -1 index?
             if (endOfTagIndex == -1)
                 endOfTagIndex = remainingTags.Length;
 
@@ -58,7 +57,6 @@ public static class IrcMessageParser
             var tagKey = currentTag[..currentTag.Span.IndexOf('=')];
             var tagValue = currentTag[(tagKey.Length + 1)..];
 
-            // FIXME: Maybe don't use strings?
             parsedTags.Add(tagKey, tagValue);
 
             var realEndIndex = Math.Min(remainingTags.Length, endOfTagIndex + 1);
