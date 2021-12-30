@@ -20,13 +20,12 @@ public static class TypedMessageParser
     public static PrivateMessage ParsePrivateMessage(RawIrcMessage message)
     {
         var username = message.Prefix[..message.Prefix.Span.IndexOf('!')];
-        var spannedParameters = message.Parameters.Span;
 
         // TODO: handle # being pushed out a char (don't know what this means)
-        // TODO: maybe FF, caused by recent messages api
-        var separatorIndex = spannedParameters.IndexOf(':');
+        var separatorIndex = message.Parameters.Span.IndexOf(':');
         if (separatorIndex == -1)
-            separatorIndex = spannedParameters.LastIndexOf(" ");
+            separatorIndex = message.Parameters.Span.LastIndexOf(" ");
+
         var channel = message.Parameters[1..(separatorIndex - 1)];
         var content = message.Parameters[(separatorIndex + 1)..];
 
