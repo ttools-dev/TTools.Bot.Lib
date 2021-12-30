@@ -3,7 +3,7 @@ using TTools.Bot.Lib.Parser.Models;
 
 namespace TTools.Bot.Lib.Parser.Parsers;
 
-public static class IrcMessageParser
+public static class TypedMessageParser
 {
     public static IIrcMessage ParseMessageToTyped(ReadOnlyMemory<char> rawMessage)
     {
