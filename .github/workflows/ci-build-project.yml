@@ -1,0 +1,17 @@
+name: Build .NET 6 Project
+on: pull_request
+jobs:
+  build:
+    name: Build Solution
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup dotNET
+        id: install_dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.100
+
+      - name: Build Solution using .NET CLI
+        id: build_solution
+        run: dotnet build src/TTools.Bot.Lib.Parser/TTools.Bot.Lib.Parser.csproj
